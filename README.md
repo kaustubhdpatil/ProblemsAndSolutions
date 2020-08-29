@@ -1,4 +1,4 @@
-# ProblemsAndSolutions
+# Problems And Solutions
 The goal of this repository is to attempt to solve various coding problems that
 are using various data structures and algorithms.
 

@@ -8,16 +8,13 @@ namespace Problem_1
         private static int[] ReadInputArray(int size)
         {
             int index = 0;
-            Console.WriteLine("Enter array values in each line");
             int[] input = new int[size];
 
             while (index < size)
             {
-                if (int.TryParse(Console.ReadLine(), out int value))
-                {
-                    input[index] = value;
-                    index += 1;
-                }
+                int nextIndex = index + 1;
+                input[index] = nextIndex;
+                index = nextIndex;
             }
 
             return input;
@@ -37,8 +34,18 @@ namespace Problem_1
                 int.TryParse(Console.ReadLine(), out int expectedSum);
 
                 Solution solution = new Solution();
+                DateTime begin = DateTime.Now;
                 bool result = solution.FindAndPrintTwoNumbersBasic(expectedSum, input);
+                DateTime end = DateTime.Now;
                 Console.WriteLine($"Result is: {result}");
+                Console.WriteLine($"Total time in seconds Brute force: {end - begin}");
+
+                
+                begin = DateTime.Now;
+                result = solution.FindAndPrintTwoNumbersOptimized(expectedSum, input);
+                end = DateTime.Now;
+                Console.WriteLine($"Result is: {result}");
+                Console.WriteLine($"Total time in seconds Optimized: {end - begin}");
             }
         }
     }
