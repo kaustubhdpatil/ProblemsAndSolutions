@@ -38,14 +38,14 @@ namespace Problem_1
                 bool result = solution.FindAndPrintTwoNumbersBasic(expectedSum, input);
                 DateTime end = DateTime.Now;
                 Console.WriteLine($"Result is: {result}");
-                Console.WriteLine($"Total time in seconds Brute force: {end - begin}");
+                Console.WriteLine($"Total time Brute force: {end - begin}");
 
                 
                 begin = DateTime.Now;
                 result = solution.FindAndPrintTwoNumbersOptimized(expectedSum, input);
                 end = DateTime.Now;
                 Console.WriteLine($"Result is: {result}");
-                Console.WriteLine($"Total time in seconds Optimized: {end - begin}");
+                Console.WriteLine($"Total time Optimized: {end - begin}");
             }
         }
     }
