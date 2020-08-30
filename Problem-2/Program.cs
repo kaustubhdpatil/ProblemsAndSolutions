@@ -5,10 +5,10 @@ namespace Problem_2
 {
     class Program
     {
-        static int[] ReadInputArray(int size)
+        static long[] ReadInputArray(int size)
         {
             int index = 0;
-            int[] input = new int[size];
+            long[] input = new long[size];
 
             while (index < size)
             {
@@ -28,17 +28,21 @@ namespace Problem_2
 
             if (size > 0) 
             {
-                int[] input = ReadInputArray(size);
+                long[] input = ReadInputArray(size);
 
                 Solution solution = new Solution();
                 DateTime begin = DateTime.Now;
                 solution.FindProductAndPrintBasic(input);
                 DateTime end = DateTime.Now;
                 Console.WriteLine($"Total time Brute force: {end - begin}");
-
                 
                 begin = DateTime.Now;
                 solution.FindAndPrintProductOptimized(input);
+                end = DateTime.Now;
+                Console.WriteLine($"Total time Optimized: {end - begin}");
+                
+                begin = DateTime.Now;
+                solution.FindProductWithoutDivision(input);
                 end = DateTime.Now;
                 Console.WriteLine($"Total time Optimized: {end - begin}");
             }
